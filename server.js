@@ -27,10 +27,7 @@ mongoose.connect(mongodbURI, {
 
 app.route('/')
     .get(function(req, res) {
-        return res.json({
-            message: 'Welcome to todomvc'
-
-        })
+        return TodoController.getAllTodos(req,res);
     })
 
     .post(function(req, res){
